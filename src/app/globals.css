@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", "Inter Variable", ui-sans-serif, sans-serif;
+
+  /* Brand navy taken from the current site (#0B4A8B) */
+  --color-brand-50: #eef5fc;
+  --color-brand-100: #d7e7f7;
+  --color-brand-200: #b0cfef;
+  --color-brand-300: #7eafe2;
+  --color-brand-400: #4a88cf;
+  --color-brand-500: #2669b6;
+  --color-brand-600: #145595;
+  --color-brand-700: #0b4a8b;
+  --color-brand-800: #0a3a6b;
+  --color-brand-900: #082c52;
+  --color-brand-950: #051b33;
+
+  --color-accent-400: #38c6d9;
+  --color-accent-500: #14a9bf;
+
+  --color-ink: #0f172a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-slate-600 antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink tracking-tight;
+  }
+  ::selection {
+    @apply bg-brand-700 text-white;
+  }
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500;
+}
+@utility btn-primary {
+  @apply btn bg-brand-700 text-white shadow-lg shadow-brand-700/20 hover:-translate-y-0.5 hover:bg-brand-800;
+}
+@utility btn-light {
+  @apply btn bg-white text-brand-800 hover:-translate-y-0.5 hover:bg-brand-50;
+}
+@utility btn-ghost {
+  @apply btn border border-white/30 text-white hover:bg-white/10;
+}
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600;
+  &::before {
+    content: "";
+    @apply h-px w-8 bg-current;
+  }
+}
+@utility card {
+  @apply rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-900/5;
+}
+
+@theme {
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up { animation: none; }
+}
