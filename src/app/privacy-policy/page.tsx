@@ -3,24 +3,21 @@ import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
 import PageHero from "@/components/PageHero";
-import { site } from "@/data/site";
+import LegalDocument from "@/components/LegalDocument";
+import { privacyIntro, privacySections, privacyUpdated } from "@/data/privacy";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
-  description: "Privacy policy for Bdcalling Enterprise.",
+  description: "How Bdcalling Enterprise collects, uses and protects personal information submitted through our website, and the choices and rights you have.",
   path: "/privacy-policy",
-  noindex: true,
 });
 
-// TODO: the WordPress site linked here but had no content; add the real policy text.
-export default function Page() {
+export default function PrivacyPolicyPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Privacy Policy", path: "/privacy-policy" }])} />
-      <PageHero title="Privacy Policy" />
-      <section className="container-x max-w-3xl py-20 text-lg leading-relaxed">
-        <p>This page is being updated. For any questions, please contact us at <a className="font-semibold text-brand-700" href={`mailto:${site.email}`}>{site.email}</a>.</p>
-      </section>
+      <PageHero eyebrow="Legal" title="Privacy Policy" text={`Last updated: ${privacyUpdated}`} />
+      <LegalDocument intro={privacyIntro} sections={privacySections} ctaTitle="Questions about your data?" />
     </>
   );
 }
