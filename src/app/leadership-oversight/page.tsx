@@ -19,7 +19,7 @@ export default function LeadershipPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Leadership & Oversight", path: "/leadership-oversight" }])} />
       <PageHero eyebrow="Leadership & oversight" title="The people behind every bid" text={leadershipIntro} />
       <section className="container-x py-20 md:py-28">
-        <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2">
+        <div className={`mx-auto grid gap-8 ${leaders.length > 1 ? "max-w-4xl sm:grid-cols-2" : "max-w-md"}`}>
           {leaders.map((l) => (
             <article
               key={l.name}

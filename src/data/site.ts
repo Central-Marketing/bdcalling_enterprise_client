@@ -94,19 +94,10 @@ export const leadershipIntro =
 
 export const leaders = [
   {
-    name: "Zishan Ahammad",
-    role: "Chief Executive Officer",
-    image: "/images/leader-zishan.png",
-    // NOTE: the WordPress bio said "Zencore Solutions Limited"; corrected to Bdcalling Enterprise; please confirm.
-    bio: "As Chief Executive Officer, Zishan Ahammad provides strategic leadership and operational direction to drive business growth and innovation. His leadership ensures Bdcalling Enterprise remains focused on delivering excellence while creating sustainable value for clients and stakeholders.",
-  },
-  {
-    // NOTE: full name not on the WordPress site; please fill in.
-    name: "Shahidul",
-    role: "Strategic & Business Consultant",
-    // Background removed (transparent PNG) so it sits on the same navy backdrop as the other card
+    name: "Shahidul Islam",
+    role: "Director, Business Development",
     image: "/images/leader-shahidul-cutout.png" as string | null,
-    bio: "An experienced procurement and supply chain specialist, Shahidul brings over 15 years of expertise in managing government RFQs, public-sector partnerships, and OEM sourcing. With a strong network across Bangladeshi ministries and procurement agencies, he drives the operational direction of Bdcalling Enterprise, ensuring continuous international coordination and best-in-class tender execution.",
+    bio: "An experienced procurement and supply chain specialist, Shahidul Islam brings over 15 years of expertise in managing government RFQs, public-sector partnerships, and OEM sourcing. With a strong network across Bangladeshi ministries and procurement agencies, he drives the operational direction of Bdcalling Enterprise, ensuring continuous international coordination and best-in-class tender execution.",
   },
 ];
 
